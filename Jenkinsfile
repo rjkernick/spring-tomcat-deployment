@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        MVN_PROPS = credentials('tomcat-creds')
+        MVN_PROPS_FILE = credentials('tomcat-creds')
     }
 
     stages {
@@ -20,7 +20,7 @@ pipeline {
         stage("Setup Maven"){
             steps{
 //                sh "mkdir ${MAVEN_HOME}/conf/"
-                sh 'cp $MVN_PROPS ${MAVEN_HOME}/conf/'
+                sh 'cp $MVN_PROPS_FILE ${MAVEN_HOME}/conf/'
             }
         }
 
