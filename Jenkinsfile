@@ -6,6 +6,10 @@ pipeline {
         jdk 'jdk8'
     }
 
+    environment {
+        MVN_PROPS = credentials('tomcat-creds')
+    }
+
     stages {
         stage('Checkout'){
             steps{
@@ -22,6 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo $tomcat_url'
+                sh 'echo $MAVEN_HOME'
             }
         }
     }
