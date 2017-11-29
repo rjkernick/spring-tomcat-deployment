@@ -19,8 +19,10 @@ pipeline {
             }
         }
 
-        stage('Test'){
-            sh 'echo $tomcat_url'
+        stage('Test') {
+            steps {
+                sh 'echo $tomcat_url'
+            }
         }
     }
 }
