@@ -17,16 +17,21 @@ pipeline {
             }
         }
 
+        stage("Setup Maven"){
+            steps{
+                sh 'cp MVN_PROPS ${MAVEN_HOME}/conf/settings.xml'
+            }
+        }
+
         stage('Build'){
             steps{
                 sh 'mvn package'
             }
         }
 
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                sh 'echo $tomcat_url'
-                sh 'echo $MAVEN_HOME'
+                sh 'mvn tomcat7:deploy -Dtomcat.url=$tomcat_url'
             }
         }
     }

@@ -63,8 +63,8 @@
                 <version>2.2</version>
                 <configuration>
                     <url>${tomcat.url}/demo</url>
-                    <server>TomcatServer</server>
-                    <path>/mkyongWebApp</path>
+                    <path>/demo</path>
+                    <server>default</server>
                 </configuration>
             </plugin>
         </plugins>
