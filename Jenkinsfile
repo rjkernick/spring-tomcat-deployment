@@ -19,7 +19,7 @@ pipeline {
 
         stage("Setup Maven"){
             steps{
-                sh 'cp $MVN_PROPS ${USER_HOME}/.m2/settings.xml'
+                sh 'cp $MVN_PROPS ${USER_HOME}/.m2'
             }
         }
 
