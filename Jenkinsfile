@@ -19,7 +19,7 @@ pipeline {
 
         stage("Setup Maven"){
             steps{
-                sh "mkdir ${MAVEN_HOME}/conf/"
+//                sh "mkdir ${MAVEN_HOME}/conf/"
                 sh 'cp $MVN_PROPS ${MAVEN_HOME}/conf/'
             }
         }
