@@ -19,6 +19,8 @@ pipeline {
             }
         }
 
-
+        stage('Test'){
+            sh 'echo $tomcat_url'
+        }
     }
 }
