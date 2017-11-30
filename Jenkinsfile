@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
+    environment {
+        MVN_PROPS_FILE = credentials('tomcat-creds')
+    }
+
     tools {
         maven 'mvn3'
         jdk 'jdk8'
-    }
-
-    environment {
-        MVN_PROPS_FILE = credentials('tomcat-creds')
     }
 
     stages {
